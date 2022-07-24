@@ -1,0 +1,29 @@
+.header{
+    @apply shadow-md 
+}
+
+.header__page{
+    @apply w-10/12 m-auto justify-between  flex mt-[15px] pb-[15px]
+}
+
+.box__header{
+    @apply flex
+}
+.menu__left{
+    @apply flex justify-start 
+}
+.menu__left li{
+    @apply px-[32px] font-sans text-[16px] font-semibold		
+
+
+}
+
+.logo__page{
+    @apply w-[65px]
+}
+.menu__right{
+    @apply flex
+}
+.menu__right li{
+    @apply px-[32px] font-sans text-[16px] font-semibold		
+}
