@@ -1,0 +1,26 @@
+.footer{
+    @apply w-10/12 m-auto mt-[100px]
+}
+.list__footer{
+    @apply grid grid-cols-5 gap-[30px]
+}
+.item__list li{
+    @apply py-[5px] text-[16px] font-sans
+
+}
+.text__bold{
+    @apply font-bold	
+}
+
+.logo__footer img{
+    @apply w-[65px]
+}
+.menu__icon__footer{
+    @apply flex mt-[20px]
+}
+.menu__icon__footer li{
+    @apply pr-[10px]
+}
+.menu__icon__footer img{
+    @apply w-[20px] 
+}
