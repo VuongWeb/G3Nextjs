@@ -1,0 +1,3 @@
+.container{
+    @apply grid grid-cols-[250px_auto] w-[1440px] mx-auto
+}
