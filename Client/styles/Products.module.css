@@ -1,3 +1,97 @@
 .container{
     @apply grid grid-cols-[250px_auto] w-[1440px] mx-auto
 }
+
+.describe{
+    @apply m-8;
+}
+
+.products__menu{
+    @apply mt-12;
+}
+.products__cate{
+    @apply mb-4 text-[12px];
+}
+
+.ruler{
+    @apply my-8 border-[1px] bg-[#000] border-[#000];
+}
+
+.products__title{
+    @apply font-bold text-[12px];
+}
+
+.btn__size{
+    @apply px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px];
+}
+
+.products__color{
+    @apply mt-[20px];
+}
+.products__title{
+    @apply font-bold text-[12px];
+}
+.products__color__input{
+    @apply grid grid-cols-2
+}
+
+.input__color{
+    @apply py-2;
+}
+
+.red{
+    @apply mr-[4px] accent-red-600 border-0 ;
+}
+
+.yellow{
+    @apply mr-[4px] accent-yellow-600 border-0 
+}
+
+.blue{
+    @apply mr-[4px] accent-blue-600 border-0 
+}
+
+.violet{
+    @apply mr-[4px] accent-violet-600 border-0
+}
+
+.green{
+    @apply mr-[4px] accent-green-600 border-0
+}
+
+.black{
+    @apply mr-[4px] accent-black border-0
+}
+.listProducts{
+    @apply m-8;
+}
+
+.products__row{
+    @apply grid grid-cols-4 gap-[30px];
+}
+.imgProduct{
+   @apply  w-[215px] h-[225px]
+}
+
+.product__name{
+    @apply text-[15px] py-4 font-normal;
+}
+
+.product__cate{
+    @apply font-normal pb-3 text-[#424949];
+}
+
+.product__color{
+    @apply font-normal pb-3 text-[#424949];
+}
+
+.product__price{
+    @apply text-red-600 text-[16px] font-normal;
+}
+
+.btn{
+    @apply  text-center my-12;
+}
+.btn__text{
+    @apply bg-[#212F3C] py-3 w-[215px] text-[#fff] text-[15px];
+}

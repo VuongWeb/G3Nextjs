@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import a from 'next/link'
 import React from 'react'
 import style from '../../styles/Products.module.css'
 
@@ -7,153 +7,165 @@ type Props = {}
 
 const ProductsPage = (props: Props) => {
   return (
-    <main>
+    <div>
       <div className={style.container}>
-        <div className="describe m-8">
-          <div className="products__menu mt-12">
-            <ul className="products__categories ">
-              <li className="products__cate mb-4 text-[12px]"><a href="#">Category</a></li>
-              <li className="products__cate mb-4 text-[12px]"><a href="#">Category</a></li>
-              <li className="products__cate mb-4 text-[12px]"><a href="#">Category</a></li>
+        <div className={style.describe}>
+          <div className={style.products__menu}>
+            <ul className={style.products__categories}>
+              <li className={style.products__cate}><a href="#">Category</a></li>
+              <li className={style.products__cate}><a href="#">Category</a></li>
+              <li className={style.products__cate}><a href="#">Category</a></li>
             </ul>
           </div>
-          <hr className="my-8 border-[1px] bg-[#000] border-[#000]" />
+          <hr className={style.ruler} />
           <div className="products__size">
-            <h6 className="products__title font-bold text-[12px]">Footwear Size</h6>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">36</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">37</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">38</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">39</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">40</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">41</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">42</button>
-            <button className="btn__size px-[5px] py-[4px] rounded-[4px] border-2 border-[#000] mr-[13px] my-[13px]">43</button>
+            <h6 className={style.products__title}>Footwear Size</h6>
+            <button className={style.btn__size}>36</button>
+            <button className={style.btn__size}>37</button>
+            <button className={style.btn__size}>38</button>
+            <button className={style.btn__size}>39</button>
+            <button className={style.btn__size}>40</button>
+            <button className={style.btn__size}>41</button>
+            <button className={style.btn__size}>42</button>
+            <button className={style.btn__size}>43</button>
           </div>
-          <div className="products__color mt-[20px]">
-            <h6 className="products__title font-bold text-[12px]">Color</h6>
-            <form className="products__color__input grid grid-cols-2">
-              <div className="input__color py-2">
-                <input type="radio" name="radio" className="mr-[4px] bg-red-600 accent-red-600 border-0" id="red" /><label htmlFor="red">Red</label>
+          <div className={style.products__color}>
+            <h6 className={style.products__title}>Color</h6>
+            <form className={style.products__color__input}>
+              <div className={style.input__color}>
+                <input type="radio" name="radio" className={style.red} id="red" /><label htmlFor="red">Red</label>
               </div>
-              <div className="input__color py-2">
-                <input type="radio" name="radio" className="mr-[4px] bg-red-600 accent-yellow-600 border-0" id="yellow" /><label htmlFor="yellow">Yellow</label>
+              <div className={style.input__color}>
+                <input type="radio" name="radio" className={style.yellow} id="yellow" /><label htmlFor="yellow">Yellow</label>
               </div>
-              <div className="input__color py-2">
-                <input type="radio" name="radio" className="mr-[4px] bg-red-600 accent-blue-600 border-0" id="blue" /><label htmlFor="blue">Blue</label>
+              <div className={style.input__color}>
+                <input type="radio" name="radio" className={style.blue} id="blue" /><label htmlFor="blue">Blue</label>
               </div>
-              <div className="input__color py-2">
-                <input type="radio" name="radio" className="mr-[4px] bg-red-600 accent-violet-600 border-0" id="violet" /><label htmlFor="violet">Violet</label>
+              <div className={style.input__color}>
+                <input type="radio" name="radio" className={style.violet} id="violet" /><label htmlFor="violet">Violet</label>
               </div>
-              <div className="input__color py-2">
-                <input type="radio" name="radio" className="mr-[4px] bg-red-600 accent-green-600 border-0" id="green" /><label htmlFor="green">Green</label>
+              <div className={style.input__color}>
+                <input type="radio" name="radio" className={style.green} id="green" /><label htmlFor="green">Green</label>
               </div>
-              <div className="input__color py-2">
-                <input type="radio" name="radio" className="mr-[4px] bg-red-600 accent-black border-0" id="black" /><label htmlFor="black">Black</label>
+              <div className={style.input__color}>
+                <input type="radio" name="radio" className={style.black} id="black" /><label htmlFor="black">Black</label>
               </div>
             </form>
           </div>
         </div>
-        <div className="listProducts m-8">
-          <div className="products__row grid grid-cols-4 gap-[30px]">
+        <div className={style.listProducts}>
+          <div className={style.products__row}>
             <div className="product">
-              <Link to={}>
-                <div className="imgProduct w-[215px] h-[225px] ">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="product">
-              <Link to={}>
-                <div className="imgProduct w-[215px] h-[225px]">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853292/ywmyhofgaeiegwfwl8ev.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="product">
-              <Link to={}>
-                <div className="imgProduct w-[215px] h-[225px]">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853300/xq1n2j3oboepdsx3hah1.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="product">
-              <Link to={}>
-                <div className="imgProduct w-[215px] h-[225px]">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853306/rkcfhv7vtj0dgcpjvwi9.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="product">
-              <Link>
-                <div className="imgProduct w-[215px] h-[225px]">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853313/kspx2hoev2emm1wuotso.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="product">
-              <Link>
-                <div className="imgProduct w-[215px] h-[225px]">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853380/esrv97g5ycmmbafvllmu.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
             </div>
             <div className="product">
-              <Link to={}>
-                <div className="imgProduct w-[215px] h-[225px]">
-                  <img src="./img/pro1.jpg" />
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853322/gqi7m0n3akftm9zqb0lg.jpg" />
                 </div>
                 <div className="infoProduct">
-                  <h3 className="text-[15px] py-4 font-normal">550 UNC White University Blue</h3>
-                  <h6 className="font-normal pb-3 text-[#424949]">Main shose</h6>
-                  <h6 className="font-normal pb-3 text-[#424949]">2 color</h6>
-                  <h6 className="text-red-600 text-[16px] font-normal">$99.99</h6>
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
                 </div>
-              </Link>
+              </a>
+            </div>
+            <div className="product">
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853327/ierycpwtf503bqrdczf6.jpg" />
+                </div>
+                <div className="infoProduct">
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
-      <div className="btn text-center my-12">
-        <button className="bg-[#212F3C] py-3 w-[215px] text-[#fff] text-[15px]">See more</button>
+      <div className={style.btn}>
+        <button className={style.btn__text}>See more</button>
       </div>
-    </main>
-
+    </div>
   )
 }
 
