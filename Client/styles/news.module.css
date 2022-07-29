@@ -1,0 +1,23 @@
+.news_page{
+}
+.news_1{
+    @apply   grid grid-cols-4 gap-[30px] w-10/12 m-auto
+}
+.news_1 p {
+    @apply pt-5 pb-5 text-xs
+}
+.news_2{
+    @apply mt-12  grid grid-cols-4 gap-[30px] w-10/12 m-auto
+}
+.news_2 p {
+    @apply pt-5 pb-5 text-xs
+}
+/* .button {
+    @apply text-center bg-black text-white mt-16 px-10 py-2
+} */
+.button_newspage  {
+    @apply text-center 
+}
+.button_newspage button {
+   @apply   bg-black text-white mt-16 px-10 py-2
+}
