@@ -16,12 +16,11 @@ const Product = new Schema({
     },
     description: {
         type: String,
+    },
+    category: {
+        type: ObjectId,
+        ref: "category"
     }
-    // ,
-    // category: {
-    //     type: ObjectId,
-    //     ref: "category"
-    // }
 }, {
     timestamps: true
 })
