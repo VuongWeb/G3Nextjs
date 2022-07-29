@@ -2,17 +2,14 @@ import Category from "../models/category"
 import Products from "../models/products";
 
 export const read = async (req, res) => {
-    const condition = {_id:res.params._id}
     try {
-        const categories = await Category.findOne(condition).exec();
-        const products = await Products.find({categories}).select('-category').exec();
+        const category = await Category.findOne({_id: req.params.id}).exec();
+        const products = await Products.find({category}).select('-category').exec();
         res.json({
-            categories,products
-        })
+            category, products
+        });
     } catch (error) {
-        res.status(400).json({
-            message:"K lấy được sản phẩm"
-        })
+        console.log(error);
     }
 }
 
