@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import productRouter from './Routers/products'
-
+import categoryRouetr from './Routers/category'
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(cors())
 
 //router
 app.use(productRouter)
-
+app.use(categoryRouetr)
 
 // connect db 
 mongoose.connect("mongodb://localhost:27017/AssNextjs")

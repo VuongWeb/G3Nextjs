@@ -1,5 +1,5 @@
-import mongoose,{ Schema } from 'mongoose'
-
+import mongoose, { Schema } from 'mongoose'
+const { ObjectId } = mongoose.Types;
 
 const Product = new Schema({
     name: {
@@ -17,9 +17,9 @@ const Product = new Schema({
     description: {
         type: String,
     },
-    category: {
+    categoryId: {
         type: ObjectId,
-        ref: "category"
+        ref: "Category"
     }
 }, {
     timestamps: true
