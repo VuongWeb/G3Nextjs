@@ -12,6 +12,8 @@ const Header = (props: Props) => {
                 </div>
                 <div >
                     <ul className={style.menu__left}>
+
+
                         <li className='/products'><a href="">Products</a></li>
                         <li className='/about'><a href="">About</a></li>
                         <li className='/contact'><a href="">Contact</a></li>
