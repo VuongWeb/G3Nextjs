@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import style from './header.module.css'
 type Props = {}
@@ -12,17 +13,17 @@ const Header = (props: Props) => {
                 </div>
                 <div >
                     <ul className={style.menu__left}>
-                        <li className='/products'><a href="">Products</a></li>
-                        <li className='/about'><a href="">About</a></li>
-                        <li className='/contact'><a href="">Contact</a></li>
-                        <li className='/news'><a href="">News</a></li>
+                        <li className='/products'><Link  href="/products">Products</Link></li>
+                        <li className='/about'><Link  href="/about">About</Link></li>
+                        <li className='/contact'><Link  href="/contact">Contact</Link></li>
+                        <li className='/news'><Link  href="/news">News</Link></li>
                     </ul>
                 </div>
             </div>
             <div className="">
                 <ul className={style.menu__right}>
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">icon</a></li>
+                    <li><Link  href="/login">Login</Link></li>
+                    <li><Link  href="/register">icon</Link></li>
                 </ul>
             </div>
         </div>
