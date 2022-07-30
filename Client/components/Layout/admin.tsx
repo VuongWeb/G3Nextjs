@@ -1,10 +1,13 @@
 import React from 'react'
+import { LayoutProps } from '../../pages/models/Layout'
 
-type Props = {}
 
-const AdminLayout = (props: Props) => {
+const AdminLayout = ({ children }: LayoutProps) => {
   return (
-    <div>AdminLayout</div>
+    <div>
+        AdminLayout
+        {children}
+    </div>
     
   )
 }
