@@ -9,7 +9,7 @@ const Header = (props: Props) => {
         <div className={style.header__page}>
             <div className={style.box__header}>
                 <div className="">
-                    <a href=""><img className={style.logo__page} src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/New_Balance_logo.svg/2560px-New_Balance_logo.svg.png" alt="" /></a>
+                    <Link href="/"><img className={style.logo__page} src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/New_Balance_logo.svg/2560px-New_Balance_logo.svg.png" alt="" /></Link>
                 </div>
                 <div >
                     <ul className={style.menu__left}>
