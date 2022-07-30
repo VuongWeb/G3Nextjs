@@ -1,7 +1,7 @@
 .news_page{
 }
 .news_1{
-    @apply   grid grid-cols-4 gap-[30px] w-10/12 m-auto
+    @apply   grid grid-cols-4 gap-[30px] w-10/12 m-auto mt-12
 }
 .news_1 p {
     @apply pt-5 pb-5 text-xs
