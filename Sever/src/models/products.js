@@ -14,6 +14,10 @@ const Product = new Schema({
         type: Number,
         required: true
     },
+    size: {
+        type: Number,
+        required: true
+    },
     description: {
         type: String,
     },
