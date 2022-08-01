@@ -12,10 +12,14 @@ const Header = (props: Props) => {
                 </div>
                 <div >
                     <ul className={style.menu__left}>
+
                         <li className=''><a href="">Products</a></li>
                         <li className=''><a href="">About</a></li>
                         <li className=''><a href="">Contact</a></li>
                         <li className=''><a href="">News</a></li>
+
+                       
+
                     </ul>
                 </div>
             </div>
