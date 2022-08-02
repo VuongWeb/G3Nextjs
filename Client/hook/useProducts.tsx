@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import { add } from '../api/products'
+import { add, getAll } from '../api/products'
 import { TProduct } from '../models/products'
 
 const useProducts = () => {
@@ -7,13 +7,19 @@ const useProducts = () => {
 
     const create = async (product: TProduct) => {
         const products = await add(product);
-        mutate([...data,products])
+        mutate([...data, products])
+    };
+
+    const getProducts = async () => {
+        const products = await getAll();
+        mutate([...data, products])
     };
 
     return {
         create,
         data,
-        error
+        error,
+        getProducts
     }
 }
 

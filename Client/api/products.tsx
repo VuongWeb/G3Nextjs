@@ -10,7 +10,7 @@ export const getAll = () => {
 }
 
 export const get = (product: TProduct) => {
-    return instance.post(`/products/${product._id}`)
+    return instance.get(`/products/${product._id}`)
 }
 
 export const update = (product: TProduct) => {
