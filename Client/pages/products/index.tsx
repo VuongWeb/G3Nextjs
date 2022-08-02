@@ -79,7 +79,19 @@ const ProductsPage = (props: Props) => {
               </div>
             ))} */}
 
-
+            <div className="product">
+              <a href=''>
+                <div className={style.imgProduct}>
+                  <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
+                </div>
+                <div className="infoProduct">
+                  <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                  <h6 className={style.product__cate}>Main shose</h6>
+                  <h6 className={style.product__color}>2 color</h6>
+                  <h6 className={style.product__price}>$99.99</h6>
+                </div>
+              </a>
+            </div>
             <div className="product">
               <a href=''>
                 <div className={style.imgProduct}>
