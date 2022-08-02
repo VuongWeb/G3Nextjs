@@ -1,0 +1,62 @@
+.main__contact{
+    @apply w-8/12 m-auto
+}
+
+.title__contact{
+    @apply mt-[55px] text-[20px] font-sans
+
+}
+.title__email{
+    @apply mt-[14px]
+}
+.info__contact p{
+    @apply text-[15px] my-[14px] font-sans 
+
+    
+}
+.form__contact{
+    @apply grid grid-cols-2 gap-[30px] mt-[53px] 
+}
+.item__form__contact{
+    @apply my-[10px]
+}
+.item__form__contact label{
+    @apply flex text-[13px] font-semibold	
+}
+.item__form__contact input{
+   border: 1px solid #ccc;
+   width: 100%;
+   outline: none;
+   padding: 5px 20px;
+   margin-top: 10px;
+}
+.item__form__contact textarea{
+   border: 1px solid #ccc;
+   width: 100%;
+   outline: none;
+   height: 114px;
+   padding-left: 4px;
+   padding-top: 10px;
+    
+}
+.item__form__contact p{
+    @apply mt-[10px]
+}
+.rules__contact{
+    @apply mt-8
+}
+.rules__contact li{
+    @apply py-2
+}
+
+.box__btn{
+    @apply text-center mt-[50px]
+}
+.btn__contact{
+    background-color: #212F3C;
+    color: #fff;
+    padding: 9px 70px;
+}
+.inp__file__contact{
+    margin-top: 18px;
+}
