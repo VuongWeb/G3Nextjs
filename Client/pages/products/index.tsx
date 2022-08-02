@@ -1,11 +1,19 @@
 import a from 'next/link'
 import React from 'react'
+import useProducts from '../../hook/useProducts'
+import { TProduct } from '../../models/products'
 import style from '../../styles/Products.module.css'
 
 
 type Props = {}
 
 const ProductsPage = (props: Props) => {
+
+  // const { data, getProducts, error } = useProducts();
+  // console.log(data)
+  // if (!data) return <div>Loading ...</div>
+  // if (error) return <div>Faild to load</div>
+
   return (
     <div>
       <div className={style.container}>
@@ -55,6 +63,22 @@ const ProductsPage = (props: Props) => {
         </div>
         <div className={style.listProducts}>
           <div className={style.products__row}>
+            {/* {data.map((item: TProduct) => (
+              <div className="product" key={item?._id}>
+                <a href=''>
+                  <div className={style.imgProduct}>
+                    <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
+                  </div>
+                  <div className="infoProduct">
+                    <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                    <h6 className={style.product__cate}>Main shose</h6>
+                    <h6 className={style.product__color}>2 color</h6>
+                    <h6 className={style.product__price}>$99.99</h6>
+                  </div>
+                </a>
+              </div>
+            ))} */}
+
             <div className="product">
               <a href=''>
                 <div className={style.imgProduct}>

@@ -2,7 +2,6 @@ import Products from "../models/products"
 
 export const list = async (req, res) => {
     try {
-        console.log(res.body);
         const products = await Products.find().limit().exec()
         res.json(products)
     } catch (error) {
