@@ -13,6 +13,7 @@ const Header = (props: Props) => {
                 </div>
                 <div >
                     <ul className={style.menu__left}>
+
                         <li className='/products'><Link  href="/products">Products</Link></li>
                         <li className='/about'><Link  href="/about">About</Link></li>
                         <li className='/contact'><Link  href="/contact">Contact</Link></li>
@@ -22,6 +23,7 @@ const Header = (props: Props) => {
             </div>
             <div className="">
                 <ul className={style.menu__right}>
+
                     <li><Link  href="/login">Login</Link></li>
                     <li><Link  href="/register">icon</Link></li>
                 </ul>
