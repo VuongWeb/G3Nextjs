@@ -1,0 +1,13 @@
+.text {
+    @apply text-center
+}
+.title {
+    @apply text-center pt-5 text-xl font-bold
+}
+
+.info__about__page{
+    @apply w-6/12 m-auto mt-[39px]
+}
+.info__about__page p{
+    @apply my-[30px]
+}
