@@ -10,16 +10,15 @@ const useProducts = () => {
         mutate([...data, products])
     };
 
-    const getProducts = async () => {
-        const products = await getAll();
-        mutate([...data, products])
-    };
+    // const getProducts = async () => {
+    //     const products = await getAll();
+    //     mutate([...data, products])
+    // };
 
     return {
         create,
         data,
-        error,
-        getProducts
+        error
     }
 }
 

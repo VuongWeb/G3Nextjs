@@ -10,7 +10,7 @@ const About = (props: Props) => {
         <div className={style.banner}>
           <img
             className=" w-[100%]"
-            src="https://cdn.shopify.com/s/files/1/0456/5070/6581/files/574-GREY-DAY-HOME-BANNER_882X262_5d07350f-394b-4bb0-beb6-e67edc67ee96.jpg?v=1620808280"
+            src="https://www.premieroutlet.hu/fileadmin/user_upload/PO_NB_banner_2390x598.jpg"
             alt=""
           />
         </div>

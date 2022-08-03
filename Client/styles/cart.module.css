@@ -1,5 +1,5 @@
 .main__cart{
-    @apply grid grid-cols-12 w-10/12 m-auto  gap-[30px]
+    @apply grid grid-cols-12 w-10/12 m-auto my-16 gap-[30px]
 }
 
 .info__cart{
