@@ -63,7 +63,7 @@ const ProductsPage = (props: Props) => {
         </div>
         <div className={style.listProducts}>
           <div className={style.products__row}>
-            {/* {data.map((item: TProduct) => (
+            {data.map((item: TProduct) => (
               <div className="product" key={item?._id}>
                 <a href=''>
                   <div className={style.imgProduct}>
@@ -77,7 +77,7 @@ const ProductsPage = (props: Props) => {
                   </div>
                 </a>
               </div>
-            ))} */}
+            ))}
 
             <div className="product">
               <a href=''>

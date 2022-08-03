@@ -1,9 +1,12 @@
+import axios from 'axios'
 import useSWR from 'swr'
 import { add, getAll } from '../api/products'
 import { TProduct } from '../models/products'
 
+
 const useProducts = () => {
-    const { data, error, mutate } = useSWR('/products')
+    const fetcher = (args:any) => axios.get(args).then(res => res.data)
+    const { data, error, mutate } = useSWR('http://localhost:8000/products',fetcher)
 
     const create = async (product: TProduct) => {
         const products = await add(product);
@@ -14,6 +17,8 @@ const useProducts = () => {
     //     const products = await getAll();
     //     mutate([...data, products])
     // };
+
+
 
     return {
         create,
