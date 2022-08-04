@@ -9,10 +9,10 @@ type Props = {}
 
 const ProductsPage = (props: Props) => {
 
-  // const { data, getProducts, error } = useProducts();
-  // console.log(data)
-  // if (!data) return <div>Loading ...</div>
-  // if (error) return <div>Faild to load</div>
+  const { data, error } = useProducts();
+  console.log(data)
+  if (!data) return <div>Loading ...</div>
+  if (error) return <div>Faild to load</div>
 
   return (
     <div>
@@ -63,7 +63,7 @@ const ProductsPage = (props: Props) => {
         </div>
         <div className={style.listProducts}>
           <div className={style.products__row}>
-            {/* {data.map((item: TProduct) => (
+            {data.map((item: TProduct) => (
               <div className="product" key={item?._id}>
                 <a href=''>
                   <div className={style.imgProduct}>
@@ -77,7 +77,7 @@ const ProductsPage = (props: Props) => {
                   </div>
                 </a>
               </div>
-            ))} */}
+            ))}
 
             <div className="product">
               <a href=''>

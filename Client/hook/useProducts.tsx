@@ -1,6 +1,8 @@
+import axios from 'axios'
 import useSWR from 'swr'
 import { add, removeItem } from '../api/products'
 import { TProduct } from '../models/products'
+
 
 const useProducts = () => {
     let { data, error, mutate } = useSWR('/products')
