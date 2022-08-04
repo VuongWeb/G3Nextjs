@@ -10,13 +10,13 @@ export const add = (product: any) => {
 //     return instance.post("/products", product)
 // }
 
-// export const getAll = () => {
-//     return instance.get("/products")
-// }
+export const getAll = () => {
+    return instance.get("/products")
+}
 
-// export const get = (product: TProduct) => {
-//     return instance.get(`/products/${product._id}`)
-// }
+export const get = (id: any) => {
+    return instance.get(`/products/${id}`)
+}
 
 // export const update = (product: TProduct) => {
 //     return instance.put(`/products/update/${product._id}`, product)

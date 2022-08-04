@@ -1,23 +1,28 @@
+import { useRouter } from 'next/router';
 import React from 'react'
+import useSWR from 'swr';
 import style from '../../styles/productDetail.module.css';
-// import { GetStaticPaths, GetStaticPaths } from 'next'
-import axios from 'axios';
+
 
 type Props = {}
 
+
 const ProductsDetail = (props: Props) => {
+  const router = useRouter();
+  const { id } = router.query;
+  const { data, error } = useSWR(id ? `products/${id}` : null)
+
+  if(!data) <div>Loading ...</div>
+  if(!error) <div>Null</div>
   return (
     <div className={style.container}>
       <div className={style.product}>
         <div className={style.products__img}>
-          <img className={style.imgproducts} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1659248966/tqjmrmremmwqjb02ndgf.jpg" alt="" />
-          <img className={style.imgproducts} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1659248970/qnlr5trx0kxsktedhlev.jpg" alt="" />
-          <img className={style.imgproducts} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1659248976/nmghdmoiukntodqmajfv.jpg" alt="" />
-          <img className={style.imgproducts} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1659248981/wpmadkoffy21h8i9wdmk.jpg" alt="" />
+          <img className={style.imgproducts} src={data?.img} alt="" />
         </div>
         <div className={style.infoProduct}>
-          <h2 className={style.product__name}>550 UNC White University Blue</h2>
-          <h6 className={style.product__price}>$99.99</h6>
+          <h2 className={style.product__name}>{data.name}</h2>
+          <h6 className={style.product__price}>${data.price}</h6>
           <h6 className={style.title__product}>Color :</h6> <div className={style.circle}></div>
           <h6 className={style.title__product}>Select size</h6>
           <div className={style.product__size}>
@@ -31,11 +36,7 @@ const ProductsDetail = (props: Props) => {
             <button className={style.btn__size}>43</button>
           </div>
           <button className={style.btn__by}>By Now</button>
-          <p className={style.description}>Re-introducing a basketball legend.
-            The return of the 550 pays tribute to the 1989
-            original that defined a hoops generation. Originally worn
-            by pro ballers in the ’80s and ’90s, the new 550 is simple,
-            clean and true to its legacy.</p>
+          <p className={style.description}>{data.desc}</p>
         </div>
       </div>
       <div className={style.Relatedproducts}>
@@ -51,9 +52,30 @@ const ProductsDetail = (props: Props) => {
   )
 }
 
-// export const GetStaticPaths :GetStaticPaths = async () =>{
-//   const data = await axios.get(`http://localhost:8000/products`)
-  
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const data = await getAll();
+//   const paths = data.map((product: any) => (
+//     { params: { id: product._id } }
+//   ))
+//   return {
+//     paths,
+//     fallback: false
+//   }
 // }
+
+// //server
+// export const getStaticProps: GetServerSideProps<ProductProps> = async (context: GetStaticPropsContext) => {
+//   // console.log(context.params?.id);
+
+//   const product = await get(context.params?.id);
+//   return {
+//     props: {
+//       product
+//     },
+//     revalidate: 60
+//   }
+// }
+
+
 
 export default ProductsDetail

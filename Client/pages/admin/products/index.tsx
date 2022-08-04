@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import AdminLayout from '../../../components/Layout/user';
+import AdminLayout from '../../../components/Layout/admin';
 import useProducts from '../../../hook/useProducts'
 import { TProduct } from '../../../models/products';
 

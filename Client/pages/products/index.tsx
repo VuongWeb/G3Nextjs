@@ -10,9 +10,9 @@ type Props = {}
 const ProductsPage = (props: Props) => {
 
   const { data, error } = useProducts();
-  console.log(data)
-  if (!data) return <div>Loading ...</div>
-  if (error) return <div>Faild to load</div>
+  // console.log(data)
+  if (!data) return <div className='text-center p-12 text-2xl text-[32px]'>Loading ...</div>
+  if (error) return <div className='text-center p-12 text-2xl text-[32px]'>Faild to load</div>
 
   return (
     <div>

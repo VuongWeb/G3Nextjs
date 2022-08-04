@@ -5,7 +5,7 @@ import { TProduct } from '../models/products'
 
 
 const useProducts = () => {
-    let { data, error, mutate } = useSWR('/products')
+    let { data, error, mutate } = useSWR('http://localhost:8000/api/products')
 
     const create = async (product: TProduct) => {
         const products = await add(product);
