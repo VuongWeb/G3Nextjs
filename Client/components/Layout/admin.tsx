@@ -1,5 +1,7 @@
 import React from 'react'
 import { LayoutProps } from '../../pages/models/Layout'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const AdminLayout = ({ children }: LayoutProps) => {
@@ -81,6 +83,9 @@ const AdminLayout = ({ children }: LayoutProps) => {
                 <div id="main-content" className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
                     <main>
                         {children}
+
+
+                        <ToastContainer autoClose={1000} />
                     </main>
                     <footer className="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
                         <div className="flex sm:justify-center space-x-6">
@@ -117,7 +122,7 @@ const AdminLayout = ({ children }: LayoutProps) => {
                     </p>
                 </div>
             </div>
-
+          
         </div>
 
 

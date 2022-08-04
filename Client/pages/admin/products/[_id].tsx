@@ -1,14 +1,16 @@
-import { useRouter } from 'next/router';
-import React from 'react'
+import { useRouter } from 'next/router'
+import React, { useEffect } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
-import AdminLayout from '../../../components/Layout/admin'
+import useSWR from 'swr';
+import { getItem } from '../../../api/products';
+import AdminLayout from '../../../components/Layout/admin';
 import useProducts from '../../../hook/useProducts';
 import { TProduct } from '../../../models/products';
 import style from '../../../styles/prodcutAddmin.module.css'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
-
 type PropsProducts = {
+    _id?: string,
     name: String,
     img: String,
     price: Number,
@@ -16,28 +18,39 @@ type PropsProducts = {
     description: String
 }
 
-const AddProducts = () => {
+const EditProduct = () => {
+    const router = useRouter();
+    const { _id } = router.query;
+    // const { data, error } = useSWR(_id ? `/products/${_id}` : null);
+    const { update } = useProducts();
 
-    const { create } = useProducts();
     const {
+        reset,
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors }
+
     } = useForm<PropsProducts>();
+    
+    useEffect(() => {
+        (async() => {
+          const product = await getItem(_id)
+          reset(product)
+        })()
+      },[])
 
-    const router = useRouter();
 
-    const onSubmit: SubmitHandler<PropsProducts> = async (product) => {
-        await create(product);
-        toast.success("create successful products")
+    const onSubmit:SubmitHandler<PropsProducts> = async (product) => {
+        const data = await update(product)
+        toast.success("update successful products")
         setTimeout(() => {
             router.push("/admin/products");
-        }, 1000)
-
-    };
+        }, 500)
+    }
 
     return (
-        <div className="">
+        <div>EditProduct
+
             <section className={style.main__product}>
                 <form className={style.form__add__product} onSubmit={handleSubmit(onSubmit)}>
                     <div className={style.list__inp__add}>
@@ -93,14 +106,10 @@ const AddProducts = () => {
                 </form>
 
             </section>
-
         </div>
-
-
-
-
     )
 }
 
-AddProducts.Layout = AdminLayout;
-export default AddProducts
+EditProduct.Layout = AdminLayout
+
+export default EditProduct
