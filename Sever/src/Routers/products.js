@@ -2,12 +2,12 @@ import { Router } from "express";
 import { get } from "mongoose";
 import { create, list, remove, update } from "../controllers/products";
 
-const router = Router();
+const routerProduct = Router();
 
-router.get("/products",list)
-router.get("/products/:id",get)
-router.post("/products",create)
-router.put("/products/edit/:id",update)
-router.delete("/products/:id",remove)
+routerProduct.get("/products",list)
+routerProduct.get("/products/:id",get)
+routerProduct.post("/products",create)
+routerProduct.put("/products/:id",update)
+routerProduct.delete("/products/:id",remove)
 
-export default router
+export default routerProduct
