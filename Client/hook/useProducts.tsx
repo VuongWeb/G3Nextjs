@@ -18,8 +18,6 @@ const useProducts = () => {
     //     mutate([...data, products])
     // };
 
-
-
     return {
         create,
         data,

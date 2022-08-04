@@ -65,7 +65,7 @@ const ProductsPage = (props: Props) => {
           <div className={style.products__row}>
             {data.map((item: TProduct) => (
               <div className="product" key={item?._id}>
-                <a href=''>
+                <a href={`/products/${item?._id}`}>
                   <div className={style.imgProduct}>
                     <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
                   </div>
@@ -79,7 +79,7 @@ const ProductsPage = (props: Props) => {
               </div>
             ))}
 
-            <div className="product">
+            {/* <div className="product">
               <a href=''>
                 <div className={style.imgProduct}>
                   <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
@@ -182,7 +182,7 @@ const ProductsPage = (props: Props) => {
                   <h6 className={style.product__price}>$99.99</h6>
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
