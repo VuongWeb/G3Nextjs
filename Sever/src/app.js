@@ -1,9 +1,9 @@
-console.log(1)
+
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import productRouter from './Routers/products'
+import routerProduct from './Routers/products';
 import categoryRouetr from './Routers/category'
 
 const app = express();
@@ -14,8 +14,8 @@ app.use(express.json())
 app.use(cors())
 
 //router
-app.use(productRouter)
-app.use(categoryRouetr)
+app.use("/api",routerProduct)
+app.use("/api",categoryRouetr)
 
 // connect db 
 mongoose.connect("mongodb://localhost:27017/AssNextjs")
