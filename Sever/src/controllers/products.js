@@ -23,7 +23,7 @@ export const create = async (req, res) => {
 
 export const remove = async (req, res) => {
     try {
-        const product = await Product.findOneAndDelete({ _id: req.params.id }).exec();
+        const product = await Products.findOneAndDelete({ _id: req.params.id }).exec();
         res.json(product)
     } catch (error) {
         res.status(400).json({
@@ -32,7 +32,6 @@ export const remove = async (req, res) => {
     }
 }
 export const update = async (req, res) => {
-
     const condition = { _id: req.params.id };
     const update = req.body;
     const optional = {
