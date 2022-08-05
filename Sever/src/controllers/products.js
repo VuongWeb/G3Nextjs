@@ -32,22 +32,21 @@ export const remove = async (req, res) => {
     }
 }
 export const update = async (req, res) => {
-    const condition = { _id: req.params.id };
-    const update = req.body;
-    const optional = {
-        new: true
-    };
+    const condition = { _id: req.params.id};
+    const doc = req.body;
+    // tra ve 1 danh sach khi minh da cap nhat
+    const option = { new: true};
     try {
-        const product = await Products.findOneAndUpdate(condition,update,optional).exec();
-        res.json(product)
+        const product = await Products.findOneAndUpdate(condition, doc, option);
+        res.json(product);
     } catch (error) {
         res.status(400).json({
-            message:"Không thể cập nhật sản phẩm"
+            message: "Lỗi không tìm được sản phẩm"
         })
     }
 }
 
-export const get = async (req, res) => {
+export const getitem = async (req, res) => {
     try {
         const product = await Products.findOne({ _id: req.params.id }).exec();
         res.json(product)

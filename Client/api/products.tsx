@@ -10,17 +10,17 @@ export const add = (product: any) => {
 //     return instance.post("/products", product)
 // }
 
-export const getAll = () => {
-    return instance.get("/products")
-}
-
-export const get = (id: any) => {
-    return instance.get(`/products/${id}`)
-}
-
-// export const update = (product: TProduct) => {
-//     return instance.put(`/products/update/${product._id}`, product)
+// export const getAll = () => {
+//     return instance.get("/products")
 // }
+
+export const getItem = (_id: TProduct) => {
+    return instance.get(`/products/${_id}`)
+}
+
+export const updateItem = (product: TProduct) => {
+    return instance.patch(`/products/${product._id}`, product)
+}
 
 export const removeItem = (_id: TProduct) => {
     return instance.delete(`/products/${_id}`)
