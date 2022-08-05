@@ -14,7 +14,7 @@ export const add = (product: any) => {
 //     return instance.get("/products")
 // }
 
-export const getItem = (_id: TProduct) => {
+export const getItem = (_id: String) => {
     return instance.get(`/products/${_id}`)
 }
 

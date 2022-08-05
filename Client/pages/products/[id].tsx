@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
-import React from 'react'
+import React, { useEffect } from 'react'
 import useSWR from 'swr';
+import { getItem } from '../../api/products';
 import style from '../../styles/productDetail.module.css';
 
 
@@ -10,11 +11,14 @@ type Props = {}
 const ProductsDetail = (props: Props) => {
   const router = useRouter();
   const { id } = router.query;
-  const { data, error } = useSWR(id ? `products/${id}` : null)
-  console.log(data);
+  console.log("id:", id);
+
+  const { data, error } = useSWR(id ? `/products/${id}` : null);
   
-  if(!data) <div>Loading ...</div>
-  if(!error) <div>Null</div>
+  console.log(data);
+
+  if (!data) <div>Loading ...</div>
+  if (!error) <div>Null</div>
   return (
     <div className={style.container}>
       <div className={style.product}>
