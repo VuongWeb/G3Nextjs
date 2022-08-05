@@ -37,3 +37,13 @@ export const addcate = async (req, res) => {
         })
     }
 }
+export const remove = async (req, res) => {
+    try {
+        const category = await Category.findOneAndDelete({ _id: req.params.id }).exec();
+        res.json(category)
+    } catch (error) {
+        res.status(400).json({
+            message: "Không xóa được danh muc!"
+        })
+    }
+}
