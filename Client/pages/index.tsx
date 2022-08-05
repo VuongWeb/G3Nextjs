@@ -22,7 +22,7 @@ const Home: NextPage = () => {
                 <div className={styles.list__product__sellers}>
                     {data?.map((item: TProduct) => (
                         <div className={styles.item__sellers} key={item._id}>
-                            <a href={`/products/${item._id}`}><img className={styles.img__item__sellers} src={item.img} alt="" />
+                            <a href={`/products/${item._id}`}><img className={styles.img__item__sellers} src={item.img.toString()} alt="" />
                                 <h4>{item.name}</h4>
                                 <p>{item.price.toString()}đ</p>
                             </a>

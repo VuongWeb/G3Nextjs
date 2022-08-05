@@ -11,7 +11,8 @@ const ProductsDetail = (props: Props) => {
   const router = useRouter();
   const { id } = router.query;
   const { data, error } = useSWR(id ? `products/${id}` : null)
-
+  console.log(data);
+  
   if(!data) <div>Loading ...</div>
   if(!error) <div>Null</div>
   return (
@@ -21,8 +22,8 @@ const ProductsDetail = (props: Props) => {
           <img className={style.imgproducts} src={data?.img} alt="" />
         </div>
         <div className={style.infoProduct}>
-          <h2 className={style.product__name}>{data.name}</h2>
-          <h6 className={style.product__price}>${data.price}</h6>
+          <h2 className={style.product__name}>{data?.name}</h2>
+          <h6 className={style.product__price}>${data?.price}</h6>
           <h6 className={style.title__product}>Color :</h6> <div className={style.circle}></div>
           <h6 className={style.title__product}>Select size</h6>
           <div className={style.product__size}>
@@ -36,7 +37,7 @@ const ProductsDetail = (props: Props) => {
             <button className={style.btn__size}>43</button>
           </div>
           <button className={style.btn__by}>By Now</button>
-          <p className={style.description}>{data.desc}</p>
+          <p className={style.description}>{data?.desc}</p>
         </div>
       </div>
       <div className={style.Relatedproducts}>

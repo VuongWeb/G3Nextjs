@@ -1,6 +1,8 @@
 import a from 'next/link'
 import React from 'react'
+import useCate from '../../hook/useCategory'
 import useProducts from '../../hook/useProducts'
+import { TCate } from '../../models/category'
 import { TProduct } from '../../models/products'
 import style from '../../styles/Products.module.css'
 
@@ -10,6 +12,9 @@ type Props = {}
 const ProductsPage = (props: Props) => {
 
   const { data, error } = useProducts();
+  const { listCate, errorCate } = useCate()
+  // console.log(listCate.categories);
+  
   // console.log(data)
   if (!data) return <div className='text-center p-12 text-2xl text-[32px]'>Loading ...</div>
   if (error) return <div className='text-center p-12 text-2xl text-[32px]'>Faild to load</div>
@@ -20,9 +25,12 @@ const ProductsPage = (props: Props) => {
         <div className={style.describe}>
           <div className={style.products__menu}>
             <ul className={style.products__categories}>
-              <li className={style.products__cate}><a href="#">Category</a></li>
-              <li className={style.products__cate}><a href="#">Category</a></li>
-              <li className={style.products__cate}><a href="#">Category</a></li>
+              {listCate?.categories?.map((item:TCate) => (
+                <li className={style.products__cate} key={item._id}><a href={`/category/${item._id}`}>{item.name}</a></li>
+              ))}
+
+              {/* <li className={style.products__cate}><a href="#">Category</a></li>
+              <li className={style.products__cate}><a href="#">Category</a></li> */}
             </ul>
           </div>
           <hr className={style.ruler} />
