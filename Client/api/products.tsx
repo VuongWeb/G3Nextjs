@@ -14,13 +14,13 @@ export const add = (product: any) => {
 //     return instance.get("/products")
 // }
 
-// export const get = (product: TProduct) => {
-//     return instance.get(`/products/${product._id}`)
-// }
+export const getItem = (_id: TProduct) => {
+    return instance.get(`/products/${_id}`)
+}
 
-// export const update = (product: TProduct) => {
-//     return instance.put(`/products/update/${product._id}`, product)
-// }
+export const updateItem = (product: TProduct) => {
+    return instance.patch(`/products/${product._id}`, product)
+}
 
 export const removeItem = (_id: TProduct) => {
     return instance.delete(`/products/${_id}`)
