@@ -1,6 +1,8 @@
 import a from 'next/link'
 import React from 'react'
+import useCate from '../../hook/useCategory'
 import useProducts from '../../hook/useProducts'
+import { TCate } from '../../models/category'
 import { TProduct } from '../../models/products'
 import style from '../../styles/Products.module.css'
 
@@ -10,9 +12,12 @@ type Props = {}
 const ProductsPage = (props: Props) => {
 
   const { data, error } = useProducts();
-  console.log(data)
-  if (!data) return <div>Loading ...</div>
-  if (error) return <div>Faild to load</div>
+  const { listCate, errorCate } = useCate()
+  // console.log(listCate.categories);
+  
+  // console.log(data)
+  if (!data) return <div className='text-center p-12 text-2xl text-[32px]'>Loading ...</div>
+  if (error) return <div className='text-center p-12 text-2xl text-[32px]'>Faild to load</div>
 
   return (
     <div>
@@ -20,9 +25,12 @@ const ProductsPage = (props: Props) => {
         <div className={style.describe}>
           <div className={style.products__menu}>
             <ul className={style.products__categories}>
-              <li className={style.products__cate}><a href="#">Category</a></li>
-              <li className={style.products__cate}><a href="#">Category</a></li>
-              <li className={style.products__cate}><a href="#">Category</a></li>
+              {listCate?.categories?.map((item:TCate) => (
+                <li className={style.products__cate} key={item._id}><a href={`/category/${item._id}`}>{item.name}</a></li>
+              ))}
+
+              {/* <li className={style.products__cate}><a href="#">Category</a></li>
+              <li className={style.products__cate}><a href="#">Category</a></li> */}
             </ul>
           </div>
           <hr className={style.ruler} />
@@ -65,7 +73,7 @@ const ProductsPage = (props: Props) => {
           <div className={style.products__row}>
             {data.map((item: TProduct) => (
               <div className="product" key={item?._id}>
-                <a href=''>
+                <a href={`/products/${item?._id}`}>
                   <div className={style.imgProduct}>
                     <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
                   </div>
@@ -79,7 +87,7 @@ const ProductsPage = (props: Props) => {
               </div>
             ))}
 
-            <div className="product">
+            {/* <div className="product">
               <a href=''>
                 <div className={style.imgProduct}>
                   <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
@@ -182,7 +190,7 @@ const ProductsPage = (props: Props) => {
                   <h6 className={style.product__price}>$99.99</h6>
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

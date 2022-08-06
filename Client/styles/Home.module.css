@@ -12,10 +12,10 @@
   @apply grid grid-cols-3 gap-[30px]
 }
 .item__sellers {
-  
+  @apply drop-shadow-lg   
 }
 .img__item__sellers{
-  @apply w-[338px] h-[225px]
+  @apply w-[338px] h-[325px] 
 }
 .item__sellers h4{
   @apply mt-[27px] mb-[12px] text-[18px] font-sans

@@ -1,4 +1,3 @@
-import axios from 'axios'
 import useSWR from 'swr'
 import { add, removeItem, updateItem } from '../api/products'
 import { TProduct } from '../models/products'
@@ -43,8 +42,7 @@ const useProducts = () => {
         create,
         data,
         error,
-        remove,
-        update
+        remove
         // getProducts
     }
 }
