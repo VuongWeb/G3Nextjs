@@ -42,7 +42,8 @@ const useProducts = () => {
         create,
         data,
         error,
-        remove
+        remove,
+        update
         // getProducts
     }
 }
