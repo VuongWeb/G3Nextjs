@@ -1,5 +1,5 @@
 export interface TProduct {
-    _id?: number,
+    _id?: String,
     name: String,
     img: String,
     price: Number,
