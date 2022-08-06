@@ -35,6 +35,8 @@ const EditProduct = () => {
     useEffect(() => {
         (async() => {
           const product = await getItem(_id)
+        //   console.log(typeof product);
+          
           reset(product)
         })()
       },[])
