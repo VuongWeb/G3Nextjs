@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
     const { data, error } = useProducts()
-    console.log(data);
+    // console.log(data);
     if (!data) <h2 className='text-center p-12 text-2xl text-[32px]'>Loading ...</h2>
     if (error) <h2 className='text-center p-12 text-2xl text-[32px]'>Faild to load</h2>
     return (
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
                 </h2>
                 <div className={styles.list__product__sellers}>
                     {data?.map((item: TProduct) => (
-                        <div className={styles.item__sellers} key={item._id}>
+                        <div className={styles.item__sellers} key={item._id?.toString()}>
                             <a href={`/products/${item._id}`}><img className={styles.img__item__sellers} src={item.img.toString()} alt="" />
                                 <h4>{item.name}</h4>
                                 <p>{item.price.toString()}đ</p>

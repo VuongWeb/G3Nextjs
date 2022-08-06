@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react'
+import React from 'react'
 import useSWR from 'swr';
 import { getItem } from '../../api/products';
 import style from '../../styles/productDetail.module.css';
@@ -41,7 +41,7 @@ const ProductsDetail = (props: Props) => {
             <button className={style.btn__size}>43</button>
           </div>
           <button className={style.btn__by}>By Now</button>
-          <p className={style.description}>{data?.desc}</p>
+          <p className={style.description}>{data?.description}</p>
         </div>
       </div>
       <div className={style.Relatedproducts}>
