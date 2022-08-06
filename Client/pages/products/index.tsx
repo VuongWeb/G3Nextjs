@@ -71,8 +71,8 @@ const ProductsPage = (props: Props) => {
         </div>
         <div className={style.listProducts}>
           <div className={style.products__row}>
-            {data.map((item: TProduct) => (
-              <div className="product" key={item?._id}>
+            {data.map((item: TProduct,index:number) => (
+              <div className="product" key={index}>
                 <a href={`/products/${item?._id}`}>
                   <div className={style.imgProduct}>
                     <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
