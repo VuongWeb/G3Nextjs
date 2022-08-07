@@ -1,12 +1,22 @@
-import useSWR from 'swr'
+import useSWR, { mutate } from 'swr'
+import { read } from '../api/category';
 
 
-const useCate = () => {
-    let listCate = useSWR('http://localhost:8000/api/category').data;
-    let errorCate = useSWR('http://localhost:8000/api/category').error;
+const useCate = (id:any) => {
+    let listCate = useSWR('/category').data;
+    let errorCate = useSWR('/category').error;
+    let cate = useSWR(`/category/${id}`)
+
+    // const getcate = async (id: any) => {
+    //     const cate = await read(id)
+    //     mutate(cate)
+    // }
 
     return {
-        listCate, errorCate
+        listCate,
+        errorCate,
+        cate
+        //  getcate
     }
 }
 
