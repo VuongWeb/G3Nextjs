@@ -12,7 +12,7 @@ const CategoryProductPage = (props: Props) => {
 
     const { cate, listCate } = useCate(id);
     console.log(cate.data);
-
+    
 
     return (
         <div>
@@ -69,7 +69,7 @@ const CategoryProductPage = (props: Props) => {
                     </div>
                     <div className={style.listProducts}>
                         <div className={style.products__row}>
-                            {cate ? cate?.data?.category?.products?.map((item: TProduct, index: number) => (
+                            {cate?.data?.category?.products?.map((item: TProduct, index: number) => (
                                 <div className="product" key={index}>
                                     <a href={`/products/${item?._id}`}>
                                         <div className={style.imgProduct}>
@@ -83,8 +83,7 @@ const CategoryProductPage = (props: Props) => {
                                         </div>
                                     </a>
                                 </div>
-                            )): "Loading ..."
-                        }
+                            ))}
 
                             {/* <div className="product">
                                 <a href=''>

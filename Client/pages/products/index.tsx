@@ -78,7 +78,7 @@ const ProductsPage = (props: Props) => {
               <div className="product" key={index}>
                 <a href={`/products/${item?._id}`}>
                   <div className={style.imgProduct}>
-                    <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
+                    <img src={item?.img.toString()} />
                   </div>
                   <div className="infoProduct">
                     <h3 className={style.product__name}>550 UNC White University Blue</h3>
@@ -196,6 +196,9 @@ const ProductsPage = (props: Props) => {
             </div> */}
           </div>
         </div>
+      </div>
+      <div className="panigate">
+        
       </div>
       <div className={style.btn}>
         <button className={style.btn__text}>See more</button>
