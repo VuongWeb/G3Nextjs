@@ -1,4 +1,5 @@
 import a from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import useCate from '../../hook/useCategory'
 import useProducts from '../../hook/useProducts'
@@ -11,10 +12,12 @@ type Props = {}
 
 const ProductsPage = (props: Props) => {
 
+  const router = useRouter();
+  const { id } = router.query;
   const { data, error } = useProducts();
-  const { listCate, errorCate } = useCate()
+  const { listCate, errorCate } = useCate(id)
   // console.log(listCate.categories);
-  
+
   // console.log(data)
   if (!data) return <div className='text-center p-12 text-2xl text-[32px]'>Loading ...</div>
   if (error) return <div className='text-center p-12 text-2xl text-[32px]'>Faild to load</div>
@@ -25,7 +28,7 @@ const ProductsPage = (props: Props) => {
         <div className={style.describe}>
           <div className={style.products__menu}>
             <ul className={style.products__categories}>
-              {listCate?.categories?.map((item:TCate) => (
+              {listCate?.categories?.map((item: TCate) => (
                 <li className={style.products__cate} key={item._id}><a href={`/category/${item._id}`}>{item.name}</a></li>
               ))}
 
@@ -71,11 +74,11 @@ const ProductsPage = (props: Props) => {
         </div>
         <div className={style.listProducts}>
           <div className={style.products__row}>
-            {data.map((item: TProduct,index:number) => (
+            {data.map((item: TProduct, index: number) => (
               <div className="product" key={index}>
                 <a href={`/products/${item?._id}`}>
                   <div className={style.imgProduct}>
-                    <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
+                    <img src={item?.img.toString()} />
                   </div>
                   <div className="infoProduct">
                     <h3 className={style.product__name}>550 UNC White University Blue</h3>
@@ -193,6 +196,9 @@ const ProductsPage = (props: Props) => {
             </div> */}
           </div>
         </div>
+      </div>
+      <div className="panigate">
+        
       </div>
       <div className={style.btn}>
         <button className={style.btn__text}>See more</button>

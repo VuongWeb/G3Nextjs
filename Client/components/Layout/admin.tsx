@@ -20,8 +20,9 @@ const AdminLayout = ({ children }: LayoutProps) => {
                                     <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
                             </button>
-                            <img src="https://brademar.com/wp-content/uploads/2022/05/New-Balance-Logo-PNG-2006-%E2%80%93-2008.png" className="h-6 mr-2 w-36 h-16" />
-
+                            <Link href="/">
+                                <img src="https://brademar.com/wp-content/uploads/2022/05/New-Balance-Logo-PNG-2006-%E2%80%93-2008.png" className="h-6 mr-2 w-36 h-16" />
+                            </Link>
                         </div>
                         <div className="flex items-center">
                             <button id="toggleSidebarMobileSearch" type="button" className="lg:hidden text-gray-500 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg">
@@ -44,26 +45,22 @@ const AdminLayout = ({ children }: LayoutProps) => {
                             <div className="flex-1 px-3 bg-white divide-y space-y-1">
                                 <ul className="space-y-2 pb-2">
                                     <li>
-                                        <Link href={'/admin/news/'}>
-                                            <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
-                                                <svg className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                                                </svg>
-                                                <span className="ml-3 flex-1 whitespace-nowrap">News</span>
-                                            </a>
-                                        </Link>
+                                        <a href='/admin' className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
+                                            <svg className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="ml-3 flex-1 whitespace-nowrap">Users</span>
+                                        </a>
                                     </li>
                                     <li>
-                                        <Link href={'/admin/products/'}>
-                                            <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
-                                                <svg className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
-                                                </svg>
-                                                <span className="ml-3 flex-1 whitespace-nowrap">Products</span>
-                                            </a>
-                                        </Link>
+                                        <a href='/admin/products' className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
+                                            <svg className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="ml-3 flex-1 whitespace-nowrap">Products</span>
+                                        </a>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <a className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
                                             <svg className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                 <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" />
@@ -78,7 +75,7 @@ const AdminLayout = ({ children }: LayoutProps) => {
                                             </svg>
                                             <span className="ml-3 flex-1 whitespace-nowrap">Sign Up</span>
                                         </a>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>
