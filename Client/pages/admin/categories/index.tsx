@@ -14,8 +14,8 @@ const ProductsList = () => {
     const { _id } = router.query;
     const { listCate, error, remove } = useCate(_id);
     console.log(listCate)
-    if (error) return <div>Failed to load </div>
-    if (!listCate) return <div>Loading....</div>
+    // if (error) return <div>Failed to load </div>
+    // if (!listCate) return <div>Loading....</div>
     // console.log(listCate)
     return (
         <div>
@@ -63,7 +63,7 @@ const ProductsList = () => {
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
 
-                                    {listCate.map ((item: any, index: any) => (
+                                    {listCate?.categories?.map ((item: any, index: any) => (
                                         <tr className="hover:bg-gray-100" key={index}>
                                             <td className="p-4 w-4">
                                                 <div className="flex items-center">

@@ -1,3 +1,4 @@
+
 import { TCate } from "../models/category";
 import instance from "./config"
 
@@ -13,12 +14,12 @@ export const add = (Category: any) => {
     return instance.post("/Categories", Category);
 };
 
-export const getItem = (_id: TCate) => {
+export const getItemCate = (_id: TCate) => {
     return instance.get(`/categories/${_id}`)
 }
 
 export const updateItem = (Category: TCate) => {
-    return instance.patch(`/categories/${Category._id}`, Category)
+    return instance.put(`/categories/${Category._id}`, Category)
 }
 
 export const removeItem = (_id: TCate) => {
