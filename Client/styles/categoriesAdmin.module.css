@@ -1,0 +1,27 @@
+.main__categories{
+    @apply  w-[600px] mt-10
+}
+
+.form__add__categories{
+    @apply   px-8 pt-6 pb-8 mb-4
+}
+
+.list__inp__add{
+    @apply mb-4
+}
+.list__inp__add label{
+    @apply block text-gray-700 text-sm font-bold mb-2
+}
+.list__inp__add input{
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight 
+}
+.list__inp__add input{
+   outline: none;
+}
+
+.btn__add__categories__admin{
+    @apply flex items-center justify-between
+}
+.btn__add__categories__admin button{
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded 
+}

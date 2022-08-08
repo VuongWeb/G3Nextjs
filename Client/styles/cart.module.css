@@ -1,0 +1,90 @@
+.main__cart{
+    @apply grid grid-cols-12 w-10/12 m-auto my-16 gap-[30px]
+}
+
+.info__cart{
+    @apply col-span-7  mt-[59px]
+}
+
+.checkout__cart{
+    @apply col-span-5
+}
+.title__cart{
+    @apply text-[24px] font-bold
+}
+
+.list__products__cart{
+     @apply grid grid-cols-3 gap-[30px]
+}
+.img__product__cart{
+
+}
+.info__product__cart{
+    @apply mt-[54px]
+}
+
+.desc__product__cart li{
+    @apply mb-1
+}
+.desc__product__cart span{
+    @apply ml-3 font-mono  text-[15px] font-bold
+}
+.name__product__Cart{
+    @apply text-[15px] font-bold font-mono
+
+}
+.color__producut__cart{
+    @apply w-[20px]  rounded-full
+
+
+}
+.qty__producut__cart,.size__producut__cart{
+    @apply w-[50px] 
+}
+.qty__producut__cart , .size__producut__cart{
+    outline: none;
+}
+.btn__action__cart{
+    @apply mt-[54px] 
+}
+.btn__edit__cart{
+    @apply py-[2px] bg-[#FFD700] px-[28px] text-[#fff]
+}
+.btn__delelte__cart{
+    @apply flex  py-[2px] bg-[#7B241C] px-[20px] mt-[38px] text-[#fff]
+}
+.checkout__cart{
+    border: 1px solid #ccc;	
+    padding: 20px;
+}
+.checkout__cart h4{
+@apply mt-[20px] 
+
+}
+.checkout__product__cart{
+    @apply grid grid-cols-3 gap-[20px]
+}
+.checkout__product__cart{
+    border-bottom: 1px solid #ccc;
+}
+.checkout__product__cart{
+
+}
+.desc__product__cart{
+   
+}
+.img__product__checkout{
+
+}
+.info__checkout__Cart{
+   
+}
+.total__cart{
+    @apply mt-[20px] float-right
+}
+.total__cart p{
+    @apply mb-[10px]
+}
+.btn__total__cart{
+    @apply py-[5px] bg-[#7B241C] px-[20px]  text-[#fff]
+}

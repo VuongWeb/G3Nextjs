@@ -1,0 +1,58 @@
+.container{
+    @apply mx-auto w-[1220px]
+}
+.product {
+    @apply  w-[705px_auto] grid grid-cols-2 gap-20 p-20
+}
+
+.imgproducts {
+    @apply w-full
+}
+
+/* .products__img {
+    @apply grid grid-cols-2 gap-8 overflow-hidden
+} */
+
+.infoProduct {}
+
+.product__name {
+    @apply font-bold text-[20px]
+}
+
+.product__price {
+    @apply text-red-600 py-2
+}
+
+.title__product {
+    @apply py-2 text-[12px] font-bold
+}
+
+.circle {}
+
+.product__size {
+    @apply grid grid-cols-4 gap-3 py-2
+}
+
+.btn__size {
+    @apply p-2 border-2 border-[#ccc]
+}
+
+.btn__by {
+    @apply bg-[#8F0000] text-white w-[100%] p-2 my-2
+}
+
+.description {
+    @apply text-[12px] mt-8
+}
+
+.Relatedproducts {
+   
+}
+
+.relatetitle{
+    @apply text-[20px] font-bold py-4
+}
+
+.Related {
+    @apply grid grid-cols-4 gap-4
+}
