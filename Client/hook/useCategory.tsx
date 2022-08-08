@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { add, removeItem, updateItem } from "../api/categories";
+import { add, removeItem, updateItem } from "../api/category";
 import { TCategories } from "../models/categories";
 
 // const useCategories= () => {

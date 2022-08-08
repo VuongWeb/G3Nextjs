@@ -1,24 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react'
 import AdminLayout from '../../../components/Layout/admin';
-import useCategories from '../../../hook/useCategory';
+import useCate from '../../../hook/useCategory';
 
 import useProducts from '../../../hook/useProducts'
 import { TProduct } from '../../../models/products';
 
 
 const ProductsList = () => {
-    const { listCate, error, remove } = useCategories();
+    const router = useRouter();
+    const { _id } = router.query;
+    const { listCate, error, remove } = useCate(_id);
     console.log(listCate)
     if (error) return <div>Failed to load </div>
     if (!listCate) return <div>Loading....</div>
-    console.log(listCate)
+    // console.log(listCate)
     return (
         <div>
-
-
-
             <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5">
                 <div className="mb-1 w-full mt-4">
                     <div className="mb-6">
@@ -63,7 +63,7 @@ const ProductsList = () => {
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
 
-                                    {listCate?.categories?.map ((item: any, index: any) => (
+                                    {listCate.map ((item: any, index: any) => (
                                         <tr className="hover:bg-gray-100" key={index}>
                                             <td className="p-4 w-4">
                                                 <div className="flex items-center">
