@@ -23,7 +23,7 @@ const AddProducts = () => {
     const { id } = routercate.query;
     const { create } = useProducts();
     const { listCate } = useCate(id);
-    console.log(listCate.categories);
+    console.log(listCate?.categories);
 
     const {
         register,
