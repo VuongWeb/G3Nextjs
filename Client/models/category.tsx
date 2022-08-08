@@ -1,4 +1,4 @@
 export interface TCate{
-    _id?:number,
-    name:String
+    _id?:string | undefined,
+    name:String | undefined
 }
