@@ -102,11 +102,10 @@ const AddProducts = () => {
                         <label className="">
                             Categories
                         </label>
-                        <select  id="" {...register('categoryId')}>
-                            <option value="" ></option>
+                        <select className={style.select} id="" {...register('categoryId')}>
                             {
                                 listCate?.categories?.map((item: TProduct, i: any) => {
-                                    <option className='w-[250px]' key={i} value={item._id?.toString()} >{item.name}</option>
+                                    return <option className={style.cate} key={i} value={item._id?.toString()} >{item.name}</option>
                                 })
                             }
                         </select>

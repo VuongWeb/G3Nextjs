@@ -71,7 +71,7 @@ const EditCate = () => {
                         </div>
                     <div className={style.btn__add__product__admin}>
                         <button type="submit" className="" >
-                            Add cate
+                            Update cate
                         </button>
                     </div>
                 </form>
