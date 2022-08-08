@@ -45,12 +45,14 @@ const AdminLayout = ({ children }: LayoutProps) => {
                             <div className="flex-1 px-3 bg-white divide-y space-y-1">
                                 <ul className="space-y-2 pb-2">
                                     <li>
-                                        <a href='/admin' className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
+                                        <Link href={'/admin/news'}>
+                                        <a href='' className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
                                             <svg className="w-6 h-6 text-gray-500 flex-shrink-0 group-hover:text-gray-900 transition duration-75" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                 <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                                             </svg>
                                             <span className="ml-3 flex-1 whitespace-nowrap">Users</span>
                                         </a>
+                                        </Link>
                                     </li>
                                     <li>
                                         <a href='/admin/products' className="text-base text-gray-900 font-normal rounded-lg hover:bg-gray-100 flex items-center p-4 group ">
