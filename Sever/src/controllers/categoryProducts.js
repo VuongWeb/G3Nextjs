@@ -3,10 +3,11 @@ import Products from "../models/products";
 
 export const read = async (req, res) => {
     try {
-        const category = await Category.findOne({_id: req.params.id}).exec();
-        const products = await Products.find({category}).select('-category').exec();
+        const category = await Category.findOne({ _id: req.params.id }).exec();
+        const productscate = await Products.find({ categoryId : category._id }).populate({ path: 'categoryId'}).exec();
+        console.log(productscate);
         res.json({
-            category, products
+            category, productscate
         });
     } catch (error) {
         console.log(error);
@@ -21,7 +22,7 @@ export const listcate = async (req, res) => {
         })
     } catch (error) {
         res.status(400).json({
-            message:"K lấy được danh mục sản phẩm"
+            message: "K lấy được danh mục sản phẩm"
         })
     }
 }
@@ -33,7 +34,7 @@ export const addcate = async (req, res) => {
         })
     } catch (error) {
         res.status(400).json({
-            message:"K thêm được danh mục"
+            message: "K thêm được danh mục"
         })
     }
 }
@@ -47,11 +48,11 @@ export const removeCate = async (req, res) => {
         })
     }
 }
-export const updateCate= async (req, res) => {
-    const condition = { _id: req.params.id};
+export const updateCate = async (req, res) => {
+    const condition = { _id: req.params.id };
     const doc = req.body;
     // tra ve 1 danh sach khi minh da cap nhat
-    const option = { new: true};
+    const option = { new: true };
     try {
         const category = await Category.findOneAndUpdate(condition, doc, option);
         res.json(category);

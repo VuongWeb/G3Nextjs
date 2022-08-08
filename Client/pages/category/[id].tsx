@@ -69,17 +69,17 @@ const CategoryProductPage = (props: Props) => {
                     </div>
                     <div className={style.listProducts}>
                         <div className={style.products__row}>
-                            {cate?.data?.category?.products?.map((item: TProduct, index: number) => (
+                            {cate?.data?.productscate?.map((item: TProduct, index: number) => (
                                 <div className="product" key={index}>
                                     <a href={`/products/${item?._id}`}>
                                         <div className={style.imgProduct}>
-                                            <img src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853114/z3ljreulo9k8dtvoib9f.jpg" />
+                                            <img src={`${item.img}`} />
                                         </div>
                                         <div className="infoProduct">
-                                            <h3 className={style.product__name}>550 UNC White University Blue</h3>
+                                            <h3 className={style.product__name}>{item.name}</h3>
                                             <h6 className={style.product__cate}>Main shose</h6>
                                             <h6 className={style.product__color}>2 color</h6>
-                                            <h6 className={style.product__price}>$99.99</h6>
+                                            <h6 className={style.product__price}>{item.price.toString()}</h6>
                                         </div>
                                     </a>
                                 </div>

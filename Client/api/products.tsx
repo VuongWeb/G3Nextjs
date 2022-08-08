@@ -19,7 +19,7 @@ export const getItem = (_id: any) => {
 }
 
 export const updateItem = (product: TProduct) => {
-    return instance.patch(`/products/${product._id}`, product)
+    return instance.put(`/products/${product._id}`, product)
 }
 
 export const removeItem = (_id: TProduct) => {

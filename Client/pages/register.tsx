@@ -11,7 +11,7 @@ type FormUser = {
     name: string,
     email: string,
     password: string,
-    role:number
+    role: number
 }
 
 
@@ -46,13 +46,18 @@ const Register = () => {
                         {...register("password")}
                         className={style.input_form} type="password" placeholder="Password" />
                 </div>
+                <div className="mb-4">
+                    <input
+                        {...register("role")}
+                        className={style.input_form} type="text" value={2} hidden/>
+                </div>
                 <div className={style.form__btn}>
                     <button className={style.btn_create} type="submit">
                         Create Account
                     </button>
                 </div>
             </form>
-         
+
         </div>
     )
 }

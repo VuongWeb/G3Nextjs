@@ -2,11 +2,11 @@ import { TCategories } from "../models/categories";
 import instance from "./config"
 
 export const getAll = () => {
-    return instance.get('/category');
+    return instance.get('/categories');
 }
 
 export const read = (id: any) => {
-    return instance.get(`/category/${id}`)
+    return instance.get(`/categories/${id}`)
 }
 
 export const add = (Category: any) => {
