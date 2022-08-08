@@ -25,3 +25,4 @@ export const updateItem = (product: TProduct) => {
 export const removeItem = (_id: TProduct) => {
     return instance.delete(`/products/${_id}`)
 }
+

@@ -36,13 +36,27 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmit)} className={style.form_login}>
                 <div className="mb-4">
                     <input 
-                    {...register("email")}
+                    {...register("email" , {required:true})}
                     className={style.input__email} id="username" type="text" placeholder="Email" />
+                </div>
+                <div>
+                {errors.email && errors.email.type === "required" && (
+                        <span style={{ color: 'red' }}>
+                            this is faild is required
+                        </span>
+                    )}
                 </div>
                 <div className="mb-6">
                     <input 
-                    {...register("password")}
+                    {...register("password" , {required : true})}
                     className={style.input__pass} id="password" type="password" placeholder="Password?" />
+                </div>
+                <div>
+                {errors.password && errors.password.type === "required" && (
+                        <span style={{ color: 'red' }}>
+                            this is faild is required
+                        </span>
+                    )}
                 </div>
                 <div className={style.form_btn}>
                     <button className={style.btn__login} type="submit">
