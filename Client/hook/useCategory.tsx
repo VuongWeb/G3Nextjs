@@ -39,9 +39,9 @@ import { TCategories } from "../models/categories";
 // import { read } from '../api/category';
 
 const useCate = (id: any) => {
-  let listCate = useSWR("/category").data;
-  let errorCate = useSWR("/category").error;
-  let cate = useSWR(`/category/${id}`);
+  let listCate = useSWR("/categories").data;
+  let errorCate = useSWR("/categories").error;
+  let cate = useSWR(`/categories/${id}`);
 
   let { data, error, mutate } = useSWR("/categories");
 
