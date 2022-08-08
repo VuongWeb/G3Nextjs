@@ -4,6 +4,9 @@ import style from './header.module.css'
 type Props = {}
 
 const Header = (props: Props) => {
+    // const user = localStorage.getItem('User')!;
+    // console.log(user);
+    
     return (
         <header className={style.header}>
             <div className={style.header__page}>

@@ -135,7 +135,7 @@ const EditProduct = () => {
                     </div>
                     <div className={style.btn__add__product__admin}>
                         <button type="submit" className="" >
-                            Add Products
+                            UPdate Products
                         </button>
                     </div>
                 </form>
