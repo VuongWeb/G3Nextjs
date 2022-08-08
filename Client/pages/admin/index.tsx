@@ -8,7 +8,6 @@ const AdminPage = (props: Props) => {
     return (
         <div>
            Dashboard
-
         </div>
 
     )

@@ -5,7 +5,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import routerProduct from './Routers/products';
 import categoryRouetr from './Routers/category'
-import routeAuth from './Routers/auth';
+import userRouetr from './Routers/user'
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(cors())
 //router
 app.use("/api",routerProduct)
 app.use("/api",categoryRouetr)
-app.use("/api",routeAuth)
+app.use("/api",userRouetr)
 
 // connect db 
 mongoose.connect("mongodb://localhost:27017/AssNextjs")

@@ -1,32 +1,35 @@
-import Link from 'next/link';
 import React from 'react'
+import Link from 'next/link';
+import useNews from '../../../hook/useNews';
 import AdminLayout from '../../../components/Layout/admin';
-// import AdminLayout from '../../../components/Layout/admin';
-import useProducts from '../../../hook/useProducts'
-import { TProduct } from '../../../models/products';
 
 
-const ProductsList = () => {
-    const { data, error, remove } = useProducts();
+const NewLists = () => {
+    const { data, error,  remove  } = useNews();
     console.log(data)
     if (error) return <div>Failed to load </div>
     if (!data) return <div>Loading....</div>
-    console.log(data)
+    console.log(data);
+
+    
+
+    
     return (
         <div>
+
             <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5">
                 <div className="mb-1 w-full mt-4">
                     <div className="mb-6">
-                        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 ">Product Management</h1>
+                        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 ">News</h1>
                     </div>
                     <div className="block sm:flex items-center md:divide-x md:divide-gray-100">
 
                         <div className="flex items-center  w-full">
-                            <Link href={'/admin/products/add'}><button type="button" data-modal-toggle="add-product-modal" className="text-white bg-red-600 hover:bg-yellow-500 focus:ring-4 focus:ring-cyan-200 font-medium inline-flex items-center rounded-lg text-sm px-3 py-2 text-center sm:ml-auto">
+                            <Link href={'/admin/news/add'}><button type="button" data-modal-toggle="add-product-modal" className="text-white bg-red-600 hover:bg-yellow-500 focus:ring-4 focus:ring-cyan-200 font-medium inline-flex items-center rounded-lg text-sm px-3 py-2 text-center sm:ml-auto">
                                 <svg className="-ml-1 mr-2 h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clipRule="evenodd" />
                                 </svg>
-                                Add product
+                                Add News
                             </button></Link>
 
                         </div>
@@ -51,18 +54,13 @@ const ProductsList = () => {
                                             ID
                                         </th>
                                         <th scope="col" className="p-4 text-left text-xs font-medium text-gray-500 uppercase">
-                                            Product Name
+                                            Title
                                         </th>
                                         <th scope="col" className="p-4 text-left text-xs font-medium text-gray-500 uppercase">
                                             Image
                                         </th>
 
-                                        <th scope="col" className="p-4 text-left text-xs font-medium text-gray-500 uppercase">
-                                            Price
-                                        </th>
-                                        <th scope="col" className="p-4 text-left text-xs font-medium text-gray-500 uppercase">
-                                            Size
-                                        </th>
+                                        
                                         <th scope="col" className="p-4 text-left text-xs font-medium text-gray-500 uppercase">
                                             Description
                                         </th>
@@ -84,18 +82,16 @@ const ProductsList = () => {
                                                 <div className="text-base font-semibold text-gray-900">{index+1}</div>
                                             </td>
                                             <td className="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                                <div className="text-base font-semibold text-gray-900">{item.name}</div>
+                                                <div className="text-base font-semibold text-gray-900">{item.title}</div>
                                             </td>
                                             <td className="p-4 whitespace-nowrap text-base font-medium text-gray-900">
                                                <img src={item.img} width="150px" alt="" /></td>
-                                            <td className="p-4 whitespace-nowrap text-base font-medium text-gray-900">
-                                                {item.price}</td>
-                                            <td className="p-4 whitespace-nowrap text-base font-medium text-gray-900">
-                                            {item.size}</td>
+                                            
+                                        
                                             <td className="p-4 whitespace-nowrap text-base font-medium text-gray-900">
                                             {item.description}</td>
                                             <td className="p-4 whitespace-nowrap space-x-2">
-                                                <Link href={`/admin/products/${item._id}`}><button type="button" data-modal-toggle="product-modal" className="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center">
+                                                <Link href={`/admin/news/${item._id}`}><button type="button" data-modal-toggle="product-modal" className="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm inline-flex items-center px-3 py-2 text-center">
                                                     <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
                                                         </path>
@@ -140,7 +136,7 @@ const ProductsList = () => {
                     <div className="bg-white rounded-lg shadow relative">
                         <div className="flex items-start justify-between p-5 border-b rounded-t">
                             <h3 className="text-xl font-semibold">
-                                Add product
+                                Add news
                             </h3>
                             <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="add-product-modal">
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -185,7 +181,5 @@ const ProductsList = () => {
         </div>
     )
 }
-
-ProductsList.Layout = AdminLayout
-
-export default ProductsList
+NewLists.Layout = AdminLayout
+export default NewLists

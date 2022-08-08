@@ -1,4 +1,3 @@
-import axios from 'axios'
 import useSWR from 'swr'
 import { add, removeItem, updateItem } from '../api/products'
 import { TProduct } from '../models/products'
@@ -35,12 +34,13 @@ const useProducts = () => {
 
     // delete product
     const remove = async (_id:any) => {
+        if((window.confirm("Are you sure delete?")))
         await removeItem(_id);
         const newProducts = data.filter((item:any) => item._id !== _id);
         mutate(newProducts);
     };
     return {
-        create,
+        add,
         data,
         error,
         remove,
