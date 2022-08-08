@@ -4,7 +4,7 @@ import Products from "../models/products";
 export const read = async (req, res) => {
     try {
         const category = await Category.findOne({ _id: req.params.id }).exec();
-        const productscate = await Products.find({ category }).select('-category').exec();
+        const productscate = await Products.find({ categoryId : category._id }).populate({ path: 'categoryId'}).exec();
         console.log(productscate);
         res.json({
             category, productscate
