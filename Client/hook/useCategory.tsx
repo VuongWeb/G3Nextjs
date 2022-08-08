@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import { add, removeItem, updateItem } from "../api/category";
-import { TCategories } from "../models/categories";
+import { TCate } from "../models/category";
 
 // const useCategories= () => {
 
@@ -49,7 +49,7 @@ const useCate = (id: any) => {
   //     const cate = await read(id)
   //     mutate(cate)
   // }
-  const create = async (Category: TCategories) => {
+  const create = async (Category: TCate) => {
     const categories = await add(Category);
     mutate(categories);
   };
