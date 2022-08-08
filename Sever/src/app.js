@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import routerProduct from './Routers/products';
 import categoryRouetr from './Routers/category'
 import userRouetr from './Routers/user'
+import routerNew from './Routers/news';
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cors())
 app.use("/api",routerProduct)
 app.use("/api",categoryRouetr)
 app.use("/api",userRouetr)
+app.use("/api",routerNew)
 
 // connect db 
 mongoose.connect("mongodb://localhost:27017/AssNextjs")

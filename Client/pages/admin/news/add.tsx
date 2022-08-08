@@ -3,6 +3,7 @@ import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import AdminLayout from '../../../components/Layout/admin';
 import useNews from '../../../hook/useNews';
+import { toast } from 'react-toastify';
 
 type PropsNews = {
   title: String,
@@ -15,7 +16,11 @@ const Addnew = () => {
   const { register, handleSubmit, formState: { errors }, } = useForm<PropsNews>();
   const router = useRouter();
   const onSubmit: SubmitHandler<PropsNews> = async(neww) => {
-  await create(neww);
+    await create(neww);
+    toast.success("create successful news")
+    setTimeout(() => {
+        router.push("/admin/news");
+    }, 1000)
 };
 return (
   <div className="w-[600px] mt-10">
