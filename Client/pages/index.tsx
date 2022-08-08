@@ -20,14 +20,27 @@ const Home: NextPage = () => {
                     Best sellers
                 </h2>
                 <div className={styles.list__product__sellers}>
-                    {data?.map((item: TProduct) => (
-                        <div className={styles.item__sellers} key={item._id?.toString()}>
-                            <a href={`/products/${item._id}`}><img className={styles.img__item__sellers} src={item.img.toString()} alt="" />
-                                <h4>{item.name}</h4>
-                                <p>{item.price.toString()}đ</p>
-                            </a>
-                        </div>
-                    ))}
+                <div className={styles.item__sellers} >
+                        <a href=""><img className={styles.img__item__sellers} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1659248966/tqjmrmremmwqjb02ndgf.jpg" alt="" /></a>
+                        <h4>
+                            550 UNC White University Blue
+                        </h4>
+                        <p>$109.99</p>
+                    </div>
+                    <div className={styles.item__sellers} >
+                        <a href=""><img className={styles.img__item__sellers} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853380/esrv97g5ycmmbafvllmu.jpg" alt="" /></a>
+                        <h4>
+                            550 UNC White University Blue
+                        </h4>
+                        <p>$109.99</p>
+                    </div>
+                    <div className={styles.item__sellers} >
+                        <a href=""><img className={styles.img__item__sellers} src="https://res.cloudinary.com/dkiw9eaeh/image/upload/v1658853306/rkcfhv7vtj0dgcpjvwi9.jpg" alt="" /></a>
+                        <h4>
+                            550 UNC White University Blue
+                        </h4>
+                        <p>$109.99</p>
+                    </div> 
 
                     {/* <div className={styles.item__sellers} >
                         <a href=""><img className={styles.img__item__sellers} src="https://i.pinimg.com/564x/13/a3/ac/13a3acea9d3e1d49d436248f96cb12ac.jpg" alt="" /></a>
@@ -76,27 +89,14 @@ const Home: NextPage = () => {
                     Recommended for you
                 </h2>
                 <div className={styles.list__product__sellers}>
-                    <div className={styles.item__sellers} >
-                        <a href=""><img className={styles.img__item__sellers} src="https://i.pinimg.com/564x/01/37/b0/0137b001fe4ece47dc0bde62de2f4b5b.jpg" alt="" /></a>
-                        <h4>
-                            550 UNC White University Blue
-                        </h4>
-                        <p>$109.99</p>
-                    </div>
-                    <div className={styles.item__sellers} >
-                        <a href=""><img className={styles.img__item__sellers} src="https://i.pinimg.com/564x/01/37/b0/0137b001fe4ece47dc0bde62de2f4b5b.jpg" alt="" /></a>
-                        <h4>
-                            550 UNC White University Blue
-                        </h4>
-                        <p>$109.99</p>
-                    </div>
-                    <div className={styles.item__sellers} >
-                        <a href=""><img className={styles.img__item__sellers} src="https://i.pinimg.com/564x/01/37/b0/0137b001fe4ece47dc0bde62de2f4b5b.jpg" alt="" /></a>
-                        <h4>
-                            550 UNC White University Blue
-                        </h4>
-                        <p>$109.99</p>
-                    </div>
+                    {data?.map((item: TProduct) => (
+                        <div className={styles.item__sellers} key={item._id?.toString()}>
+                            <a href={`/products/${item._id}`}><img className={styles.img__item__sellers} src={item.img.toString()} alt="" />
+                                <h4>{item.name}</h4>
+                                <p>{item.price.toString()}đ</p>
+                            </a>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>
