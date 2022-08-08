@@ -40,7 +40,7 @@ const useProducts = () => {
         mutate(newProducts);
     };
     return {
-        create,
+        add,
         data,
         error,
         remove,
