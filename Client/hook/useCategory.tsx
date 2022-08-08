@@ -1,23 +1,85 @@
-import useSWR, { mutate } from 'swr'
-import { read } from '../api/category';
+import useSWR from "swr";
+import { add, removeItem, updateItem } from "../api/category";
+import { TCategories } from "../models/categories";
 
+// const useCategories= () => {
 
-const useCate = (id:any) => {
-    let listCate = useSWR('/category').data;
-    let errorCate = useSWR('/category').error;
-    let cate = useSWR(`/category/${id}`)
+//     let listCate = useSWR('http://localhost:8000/api/categories').data;
+//     let { data, error, mutate } = useSWR('/categories')
 
-    // const getcate = async (id: any) => {
-    //     const cate = await read(id)
-    //     mutate(cate)
-    // }
+//     const create = async (Category: TCategories) => {
+//         const categories = await add(Category);
+//         mutate(categories)
 
-    return {
-        listCate,
-        errorCate,
-        cate
-        //  getcate
-    }
-}
+//     };
+
+//     const update = async(Category :any) => {
+//         await updateItem(Category)
+//         const newCategories = listCate?.categories?.map((item:any) => item._id  === data._id  ? Category:item)
+//         mutate(newCategories)
+//     }
+
+//     const remove = async (_id:any) => {
+//         await removeItem(_id);
+//         const newCategories = listCate?.categories?.filter((item:any) => item._id !== _id);
+//         mutate(newCategories);
+//     };
+//     return {
+//         create,
+//         data,
+//         listCate,
+//         error,
+//         remove,
+//         update
+
+//     }
+// }
+
+// export default useCategories;
+// import { read } from '../api/category';
+
+const useCate = (id: any) => {
+  let listCate = useSWR("/category").data;
+  let errorCate = useSWR("/category").error;
+  let cate = useSWR(`/category/${id}`);
+
+  let { data, error, mutate } = useSWR("/categories");
+
+  // const getcate = async (id: any) => {
+  //     const cate = await read(id)
+  //     mutate(cate)
+  // }
+  const create = async (Category: TCategories) => {
+    const categories = await add(Category);
+    mutate(categories);
+  };
+  const update = async (Category: any) => {
+    await updateItem(Category);
+    const newCategories = listCate?.categories?.map((item: any) =>
+      item._id === data._id ? Category : item
+    );
+    mutate(newCategories);
+  };
+
+  const remove = async (_id: any) => {
+    await removeItem(_id);
+    const newCategories = listCate?.categories?.filter(
+      (item: any) => item._id !== _id
+    );
+    mutate(newCategories);
+  };
+
+  return {
+    listCate,
+    errorCate,
+    cate,
+    update,
+    create,
+    remove,
+    error,
+
+    //  getcate
+  };
+};
 
 export default useCate;

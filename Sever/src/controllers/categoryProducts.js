@@ -37,3 +37,27 @@ export const addcate = async (req, res) => {
         })
     }
 }
+export const removeCate = async (req, res) => {
+    try {
+        const category = await Category.findOneAndDelete({ _id: req.params.id }).exec();
+        res.json(category)
+    } catch (error) {
+        res.status(400).json({
+            message: "Không xóa được danh muc!"
+        })
+    }
+}
+export const updateCate= async (req, res) => {
+    const condition = { _id: req.params.id};
+    const doc = req.body;
+    // tra ve 1 danh sach khi minh da cap nhat
+    const option = { new: true};
+    try {
+        const category = await Category.findOneAndUpdate(condition, doc, option);
+        res.json(category);
+    } catch (error) {
+        res.status(400).json({
+            message: "Lỗi không tìm được danh muc"
+        })
+    }
+}
