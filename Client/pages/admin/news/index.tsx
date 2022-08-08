@@ -10,6 +10,9 @@ const NewLists = () => {
     if (error) return <div>Failed to load </div>
     if (!data) return <div>Loading....</div>
     console.log(data);
+
+    
+
     
     return (
         <div>
@@ -17,7 +20,7 @@ const NewLists = () => {
             <div className="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5">
                 <div className="mb-1 w-full mt-4">
                     <div className="mb-6">
-                        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 ">Product Management</h1>
+                        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900 ">News</h1>
                     </div>
                     <div className="block sm:flex items-center md:divide-x md:divide-gray-100">
 
