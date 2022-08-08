@@ -7,6 +7,6 @@ router.get('/categories/:id',read)
 router.get('/categories',listcate)
 router.post('/categories',addcate)
 router.delete("/categories/:id",removeCate)
-router.patch("/categories/:id",updateCate)
+router.put("/categories/:id",updateCate)
 
 export default router
