@@ -11,7 +11,7 @@ type FormUser = {
     name: string,
     email: string,
     password: string,
-    role:number
+    role: number
 }
 
 
@@ -32,19 +32,59 @@ const Register = () => {
             <form onSubmit={handleSubmit(onSubmit)} className={style.form_signup}>
                 <div className="mb-4">
                     <input
-                        {...register("name")}
+                        {...register("name", { required: true, minLength: 5, maxLength: 30 })}
                         className={style.input_form} type="text" placeholder="Name" />
+                   
                 </div>
+                <div>
+                {errors.name && errors.name.type === "required" && (
+                        <span style={{ color: 'red' }}>
+                            this is faild is required
+                        </span>
+                    )}
+                    {errors.name && errors.name.type === "minLength" && (
+                        <span style={{ color: 'red' }}>
+                            requires more than 5 characters to enter
+                        </span>
+                    )}
+                    {errors.name && errors.name.type === "maxLength" && (
+                        <span style={{ color: 'red' }}>
+                            Do not enter more than 50 characters
+                        </span>
+                    )}
+                </div>
+
                 <div className="mb-4">
 
                     <input
-                        {...register("email")}
+                        {...register("email", { required: true })}
                         className={style.input_form} type="text" placeholder="Email" />
+                   
+                </div>
+                <div>
+                {errors.email && errors.email.type === "required" && (
+                        <span style={{ color: 'red' }}>
+                            this is faild is required
+                        </span>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
                         {...register("password")}
                         className={style.input_form} type="password" placeholder="Password" />
+                  
+                </div>
+                <div>
+                {errors.password && errors.password.type === "required" && (
+                        <span style={{ color: 'red' }}>
+                            this is faild is required
+                        </span>
+                    )}
+                </div>
+                <div className="mb-4">
+                    <input
+                        {...register("role")}
+                        className={style.input_form} type="text" value={2} hidden />
                 </div>
                 <div className={style.form__btn}>
                     <button className={style.btn_create} type="submit">
@@ -52,7 +92,7 @@ const Register = () => {
                     </button>
                 </div>
             </form>
-         
+
         </div>
     )
 }

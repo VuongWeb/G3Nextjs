@@ -45,7 +45,8 @@ const useProducts = () => {
         data,
         error,
         remove,
-        update
+        update,
+        create
         // getProducts
     }
 }

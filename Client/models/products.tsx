@@ -3,6 +3,7 @@ export interface TProduct {
     name: String,
     img: String,
     price: Number,
-    size: Number,
+    // size: Number,
+    categoryId:String,
     description: String
 }
