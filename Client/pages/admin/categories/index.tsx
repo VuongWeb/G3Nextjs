@@ -63,7 +63,7 @@ const ProductsList = () => {
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
 
-                                    {/* {listCate?.map ((item: any, index: any) => (
+                                    {listCate.map ((item: any, index: any) => (
                                         <tr className="hover:bg-gray-100" key={index}>
                                             <td className="p-4 w-4">
                                                 <div className="flex items-center">
@@ -95,7 +95,7 @@ const ProductsList = () => {
                                                 </button>
                                             </td>
                                         </tr>
-                                    ))} */}
+                                    ))}
                                 </tbody>
                             </table>
                         </div>

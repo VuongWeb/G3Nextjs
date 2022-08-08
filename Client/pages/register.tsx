@@ -32,9 +32,15 @@ const Register = () => {
             <form onSubmit={handleSubmit(onSubmit)} className={style.form_signup}>
                 <div className="mb-4">
                     <input
-                        {...register("name")}
+                        {...register("name", { required: true, minLength: 5, maxLength: 30 })}
                         className={style.input_form} type="text" placeholder="Name" />
+
                 </div>
+                {errors.name && errors.name.type === "required" && (
+                    <span style={{ color: 'red' }}>
+                        this is faild is required
+                    </span>
+                )}
                 <div className="mb-4">
 
                     <input
@@ -49,7 +55,7 @@ const Register = () => {
                 <div className="mb-4">
                     <input
                         {...register("role")}
-                        className={style.input_form} type="text" value={2} hidden/>
+                        className={style.input_form} type="text" value={2} hidden />
                 </div>
                 <div className={style.form__btn}>
                     <button className={style.btn_create} type="submit">
