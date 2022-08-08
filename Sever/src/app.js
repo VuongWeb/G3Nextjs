@@ -17,6 +17,7 @@ app.use(cors())
 //router
 app.use("/api",routerProduct)
 app.use("/api",categoryRouetr)
+app.use("/api",routerNew)
 
 // connect db 
 mongoose.connect("mongodb://localhost:27017/AssNextjs")

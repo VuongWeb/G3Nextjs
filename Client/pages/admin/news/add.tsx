@@ -16,7 +16,6 @@ const Addnew = () => {
   const router = useRouter();
   const onSubmit: SubmitHandler<PropsNews> = async(neww) => {
   await create(neww);
-
 };
 return (
   <div className="w-[600px] mt-10">
