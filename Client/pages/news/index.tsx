@@ -1,88 +1,39 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from "next/router";
 import React from "react";
+import useNews from "../../hook/useNews";
+import { TNews } from "../../models/news";
 import style from "../../styles/news.module.css";
 type Props = {};
 
 const News = (props: Props) => {
+
+  const router = useRouter();
+  const { id } = router.query;
+  const { data, error } = useNews();
+
+  if (!data) return <div className='text-center p-12 text-2xl text-[32px]'>Loading ...</div>
+  if (error) return <div className='text-center p-12 text-2xl text-[32px]'>Faild to load</div>
   return (
     <main>
       <div className={style.news_page}>
-        <div className={style.news_1}>
-          <div>
-            <a href="">
-              <img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg" alt="" />
-            </a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-          <div>
-            <a href="">
-              <img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg" alt="" />
-            </a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-          <div>
-            <a href=""><img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg" alt="" /></a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-          <div>
-            <a href=""><img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg" alt="" /></a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-        </div>
-        <div className={style.news_2}>
-          <div>
-            <a href=""><img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg
-" alt="" /></a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-          <div>
-            <a href=""><img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg
-" alt="" /></a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-          <div>
-            <a href=""><img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg
-" alt="" /></a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-          <div>
-            <a href=""><img src="https://i.pinimg.com/564x/dc/2b/50/dc2b504d7e3a729cd230d66cdda750b6.jpg
-" alt="" /></a>
-            <p>WEDDINGS</p>
-            <h3>
-              An Elegant Backyard Wedding Under a Magnolia Tree in Florence,
-              Alabama
-            </h3>
-          </div>
-        </div>
+      <div className={style.news_1} >
+        {data.map((item: TNews, index: number) => (
+          
+            <div key={index}>
+              <a href="">
+                <img src={item?.img.toString()} alt="" />
+              </a>
+              <h3>{item.title}</h3>
+              <p>
+                {item.description}
+              </p>
+            </div>
+
+         
+        ))}
+         </div>
+
         <div className={style.button_newspage}> <button>See more</button></div>
       </div>
     </main>
